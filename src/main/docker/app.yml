@@ -19,7 +19,7 @@ services:
     depends_on:
       devops1-mysql:
          condition: service_healthy 
-    image: bnasslahsen/devops-repo:latest
+    image: gabdusud/devops-repo:latest
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - SPRING_DATASOURCE_URL=jdbc:mysql://devops1-mysql:3306/devops1?useUnicode=true&characterEncoding=utf8&useSSL=false
