@@ -22,8 +22,18 @@ node {
 			} 
 		}
 	}
-
-	stage('Package') {
+	stage('Quality Check') {
+		withSonarQubeEnv('Sonar') {
+				withMaven(maven: 'maven') {
+						  if(isUnix()) {
+							  sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonr.projectKey=org.springdoc:spring-boot-webmvc"
+	stage('Package') } else {
+							  bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonr.projectKey=org.springdoc:spring-boot-webmvc"
+						  }
+					}
+		}
+	}
+						  
 		withMaven(maven: 'maven') {
 			if(isUnix()) {
  				sh "mvn package -DskipTest" 
