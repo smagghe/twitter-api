@@ -11,7 +11,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<properties>
-		<sonar.organization>bnasslahsen</sonar.organization>
+		<sonar.organization>smagghe</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<resource.delimiter>@</resource.delimiter>
 		<jib-maven-plugin.version>3.4.3</jib-maven-plugin.version>
