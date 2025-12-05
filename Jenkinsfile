@@ -33,6 +33,7 @@ node {
 					}
 		}
 	}
+	stage('Test') {
 						  
 		withMaven(maven: 'maven') {
 			if(isUnix()) {
